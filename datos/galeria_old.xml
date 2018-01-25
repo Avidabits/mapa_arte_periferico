@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:georss="http://www.georss.org/georss">
+<mapa_arte_periferico>
+<titulo>Mapa de arte periférico</titulo>
+<descripcion>Un directorio de las galerías periféricas</descripcion>
+<georss:point>40.41669 -3.700346</georss:point>
+<galeria>
+<nombre>Cruce</nombre>
+<direccion>Calle del Dr. Fourquet, 5. 28012 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>puro</tipologia>
+<web>crucecontemporaneo.wordpress.com</web>
+</galeria>
+<galeria>
+<nombre>La neomudejar</nombre>
+<direccion>Calle de Antonio Nebrija, s/n, 28007 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>puro</tipologia>
+</galeria>
+<galeria>
+<nombre>Garaje escópico</nombre>
+<direccion>Calle de Jaime Tercero, 39, 28011 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>puro</tipologia>
+</galeria>
+<galeria>
+<nombre>La catorce quince</nombre>
+<direccion>Avenida de Pedro Diez 25, 28019 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Espacio B</nombre>
+<direccion>calle Buenavista, 39. 28012 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>puro</tipologia>
+</galeria>
+<galeria>
+<nombre>Espacio Nigredo</nombre>
+<direccion>Calle de la Primavera 14, 28012 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+<web>http://www.nigredoespacio.com/</web>
+</galeria>
+<galeria>
+<nombre>Espacio Oculto</nombre>
+<direccion>Calle Nicolás Usera 27. 28026 MADRID</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>Taller Omnivoros</nombre>
+<direccion>Calle Sierra del Segura 22 LOCAL 28038 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>La quinta del sordo</nombre>
+<direccion>Calle del Rosario, 17, 28005 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Espacio proa</nombre>
+<direccion>Calle de Doña Berenguela, 67, 28011 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>puro</tipologia>
+</galeria>
+<galeria>
+<nombre>Espacio Naranjo</nombre>
+<direccion>Calle Naranjo, 33, 28039 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>mixto</tipologia>
+<web>https://espacio-naranjo.com/</web>
+</galeria>
+<galeria>
+<nombre>La Juan gallery</nombre>
+<direccion>Calle Juanelo, 21, 28012 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>puro</tipologia>
+</galeria>
+<galeria>
+<nombre>Swinton and Grant</nombre>
+<direccion>Miguel Servet, 21, 28012, Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Atelier solar</nombre>
+<direccion>Calle de Arturo Soria, 39, 28027 Madrid</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>Arte para todos</nombre>
+<direccion>Calle Sánchez Pacheco, 39, 28002 Madrid</direccion>
+<geografia>periferia</geografia>
+<web>https://www.facebook.com/Arte-Para-Todos-743607402508884/</web>
+</galeria>
+<galeria>
+<nombre>Whitelab</nombre>
+<direccion>Paseo del General Martínez Campos, 11, 28010 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Taller Madera</nombre>
+<direccion>Calle De La Madera, 11 28004 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Sala de maquinas</nombre>
+<direccion>Calle Francisco Ricci, 5, Bajo, 28015 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Rughara</nombre>
+<direccion>Calle Corredera Alta de San Pablo, 1, 28004 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>mixto</tipologia>
+</galeria>
+<galeria>
+<nombre>Rizoma</nombre>
+<direccion>calle lavapies, 32, 28012 Madrid</direccion>
+<geografia>centro</geografia>
+<web>https://www.facebook.com/RizomaGaleria/</web>
+</galeria>
+<galeria>
+<nombre>Gomina</nombre>
+<direccion>Calle de Batalla de Belchite, 8, 28045 Madrid</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>Origami Press</nombre>
+<direccion>calle juana doña, 6, 28045 Madrid</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>Mad is Mad</nombre>
+<direccion>Calle Pelayo, 48, 28004</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>Lompa Estidio</nombre>
+<direccion>Calle de las Peñuelas 11, local Izq, 28045 Madrid</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>La Nau</nombre>
+<direccion>Calle Mallorca, 4,28012 Madrid</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>La latente</nombre>
+<direccion>Calle Pedro Diez, 19 Bis Madrid 28019</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>La nevera</nombre>
+<direccion>Calle de Cabestreros, 6, 28012 Madrid</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>La fiambrera</nombre>
+<direccion>Calle del Pez, 7, 28004 Madrid</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>La factoria de papel</nombre>
+<direccion>Buenavista 8 Bajo, 28012 Madrid</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>Intercambiador Acart</nombre>
+<direccion>Calle Antonio Moreno, 21 bajo 28025 Madrid</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>Kikekeller</nombre>
+<direccion>Calle Corredera baja de San Pablo, 17 28004 Madrid</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>Habitar la linea</nombre>
+<direccion>Calle del Amparo, 91, 28012 Madrid</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>Galeria Gotele</nombre>
+<direccion>Calle de Cabestreros, 11-13 piso 6, 28012</direccion>
+<geografia>centro</geografia>
+</galeria>
+<galeria>
+<nombre>Fuera de Carta</nombre>
+<direccion>Calle Nicolás Morales, 38, 4º 7, 28019 Madrid</direccion>
+<geografia>periferia</geografia>
+</galeria>
+<galeria>
+<nombre>Espacio Vista</nombre>
+<direccion>Calle Vista Alegre 20, 3º A, 28019 Madrid</direccion>
+<geografia>periferia</geografia>
+<web>https://www.espaciovista.com/</web>
+</galeria>
+<galeria>
+<nombre>Espacio Trapezio</nombre>
+<direccion>Calle Augusto Figueroa, 24 Mercado de San Antón, 2ª planta, local 16, 28004 Madrid</direccion>
+<geografia>centro</geografia>
+<tipologia>puro</tipologia>
+<web>http://espaciotrapezio.org/</web>
+</galeria>
+<galeria>
+<nombre>casa de citas</nombre>
+<direccion>Calle Rafael de Riego, 5, 6º ext izq, 28045 Madrid</direccion>
+<geografia>periferia</geografia>
+<web>http://casadecitas.es/</web>
+</galeria>
+<galeria>
+<nombre>Aspa contemporary</nombre>
+<direccion>Calle de Galileo, 19, 28015 Madrid</direccion>
+<geografia>centro</geografia>
+<web>http://www.aspacontemporary.com/</web>
+</galeria>
+<galeria>
+<nombre>Espacio Bop</nombre>
+<direccion>Calle Juan de la Hoz, 22, 28028 Madrid</direccion>
+<geografia>periferia</geografia>
+<web>http://www.lorenzoalonsoarquitectos.com/bop/</web>
+</galeria>
+<galeria>
+<nombre>ABM Confecciones</nombre>
+<direccion>C/ Encarnación González Nº8 Bajo Madrid 28053 Madrid</direccion>
+<geografia>periferia</geografia>
+<tipologia>puro</tipologia>
+<web>https://www.facebook.com/abm.confecciones/</web>   
+</galeria>
+</mapa_arte_periferico>
+</rss>

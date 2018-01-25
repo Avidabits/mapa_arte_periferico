@@ -1,0 +1,13 @@
+CACHE MANIFEST
+
+#Por el momento no usamos la cache 
+CACHE:
+
+
+# Fallback content
+FALLBACK:
+
+# Use from network if available
+NETWORK:
+
+

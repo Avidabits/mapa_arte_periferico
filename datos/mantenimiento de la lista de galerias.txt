@@ -1,0 +1,5 @@
+El documento directorio_galerias.xlsx es el documento original de las galerias. Sobre el se debe hacer las modificaciones. 
+
+Despues se importa en el access
+Se genera el fichero xml, galerias.xml  
+Este fichero no tiene el formateo completo, hay que usar galerias_old.xml para ponerla la cabecera y final del fichero
