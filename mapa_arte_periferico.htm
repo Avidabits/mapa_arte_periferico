@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+  <link rel="stylesheet" type="text/css" href="mapa_arte_periferico.css">
+  <title id="title">Mapa del arte periférico</title> 
+  <script src="https://maps.googleapis.com/maps/api/js"> </script>
+  <script src="mapa_arte_periferico.js"> </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!--para que no escalen los móviles-->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-27140304-2', 'auto');// PENDIENTE, generar nueva ID, este es el de paseo_sonoro
+    ga('send', 'pageview');
+
+  </script>
+    
+  <script> <!--script de inicializacion de mapas-->
+    // el punto central hay que cogerlo del fichero soundscape.rss 'georss:point'
+    var pCentro=null;
+    var map=null;
+    var miMapa=null; 
+    var geocoder=null;
+    function loadXMLDoc()
+    {  
+      console.log("entrando en loadXMLDoc");
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          miMapa=construyeMapa(xhttp);
+          pCentro=new google.maps.LatLng(miMapa.latitud,miMapa.longitud);
+          map.setCenter(pCentro); 
+          creaBolas(); // o marcadores
+          // ya tenemos el paseo creado, usamos el título y la descripción en la interfaz de usuario
+          document.getElementById("title").innerHTML=miMapa.titulo+": "+miMapa.descripcion;
+        }//if 
+      };// function onreadystatechange
+      xhttp.open("GET", "datos/galeria.xml", true);
+      xhttp.send();
+    }// function loadXMLDoc    
+    
+    function initialize()
+    {
+      
+      var mapProp = {
+      //center:pCentro,
+      zoom:15,
+      scaleControl:true,
+      streetViewControl:false,
+      mapTypeId:google.maps.MapTypeId.ROADMAP 
+      };
+
+      geocoder = new google.maps.Geocoder();
+      map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      
+   
+      loadXMLDoc();   //funcion asincrona, 
+
+      
+    }//function initialize
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    
+
+    function geolocaliza(direccion)
+    {
+          var position=null; //aqui recogemos la lozalizacion
+          console.log("inicio de codificacion");
+          
+          geocoder.geocode( { 'address': direccion},
+            function(results, status) {
+              if (status == 'OK') {
+                position=results[0].geometry.location;
+                console.log("'", results[0].formatted_address, "',", position.lat(), ",", position.lng());
+              } else {
+                  console.log('Geocode was not successful for the following reason: ' + status);                
+              }
+            }); //geocoder.geocode        
+    }// helper para cuando necesitemo geolocalizar cosas  
+      
+      
+    function creaBolas()
+    {               
+     // calculamos tambien los limites del mapa              
+     var max_longitud=-180;
+     var max_latitud=-90;
+     var min_longitud=180;
+     var min_latitud=90;
+     for (var i = 0; i <miMapa.listaGalerias.length; i++) {
+        // geolocaliza(miMapa.listaGalerias[i].direccion); no necesitamos geolocalizar
+        //console.log("creando bola",miMapa.listaGalerias[i].latitud, miMapa.listaGalerias[i].longitud );
+        var latitud=Number(miMapa.listaGalerias[i].latitud);
+        var longitud=Number(miMapa.listaGalerias[i].longitud);
+        max_latitud=Math.max(max_latitud, latitud);
+        max_longitud=Math.max(max_longitud, longitud);
+        min_latitud=Math.min(min_latitud, latitud);
+        min_longitud=Math.min(min_longitud, longitud);
+        var pos_bola=new google.maps.LatLng(latitud, longitud);
+        var miBola = new google.maps.Circle({
+          center:pos_bola,  
+          clickable:true,
+          radius:100, // en metros
+          strokeOpacity:0,
+          strokeWeight:0,
+          fillColor:'#AA0AAA',
+          fillOpacity:0.7,
+          map:map,
+          index_bola:i,
+          title:miMapa.listaGalerias[i].nombre,
+        }); //new google.maps.Circle
+        
+        /*var miBola = new google.maps.Marker({
+          position: pos_bola,
+          title: miMapa.listaGalerias[i].nombre,
+          map: map
+        });*/
+         
+        var infowindow = new google.maps.InfoWindow({ content: mensajeGaleria(miMapa.listaGalerias[i]), maxWidth: 200 });
+        miBola.addListener('click', function(ev, miBola){
+            infowindow.setPosition(ev.latLng);
+            var mensaje=mensajeGaleriaFromPunto(ev.latLng);
+            console.log("listen... " , mensaje);
+            infowindow.setContent(mensaje);
+            if (mensaje.length>0) infowindow.open(map, miBola);
+            else infowindow.close(); //PENDIENTE: probar mejor esto
+         });
+
+         
+        miMapa.listaGalerias[i].bola=miBola;
+       
+      }//for cada bola a crear
+       console.log("rectangulo envolvente <", min_latitud, ",",  min_longitud,"><", max_latitud,",",max_longitud, ">");
+        var southWest = new google.maps.LatLng(min_latitud, min_longitud);
+        var northEast = new google.maps.LatLng(max_latitud,max_longitud);
+        var bounds = new google.maps.LatLngBounds(southWest,northEast);
+        //map.fitBounds(bounds);
+        map.setZoom(13);
+    }// function creaBolas
+    
+    // en esta zona meteremos las funciones de geocodificacion
+    
+    function mensajeGaleriaFromPunto(punto_pinchado)
+    {
+        console.log("buscando ", punto_pinchado);
+        var latitud_pinchada=punto_pinchado.lat();
+        var longitud_pinchada=punto_pinchado.lng();
+        for (var i = 0; i <miMapa.listaGalerias.length; i++) {
+            // geolocaliza(miMapa.listaGalerias[i].direccion); no necesitamos geolocalizar
+            //console.log("creando bola",miMapa.listaGalerias[i].latitud, miMapa.listaGalerias[i].longitud );
+            var latitud=Number(miMapa.listaGalerias[i].latitud);
+            var longitud=Number(miMapa.listaGalerias[i].longitud);
+            if (puntoEnCirculo(latitud_pinchada, longitud_pinchada, latitud, longitud, 100))
+                return mensajeGaleria(miMapa.listaGalerias[i]);
+        }
+        return "";
+    }
+    function mensajeGaleriaOld(galeria)
+    {
+        var msg=" ";
+        if (galeria.nombre!=null) msg=galeria.nombre;
+        msg+="\n";
+        if (galeria.direccion!=null) msg+=galeria.direccion;
+        msg+="\n";
+        if (galeria.web!=null) msg+=galeria.web;
+        console.log("mensaje", msg);
+        
+        return msg;   
+    } 
+      
+    function mensajeGaleria(galeria)
+    {
+        var msg='<div id="iw-container">';
+        msg+='<div class="iw-title">';  if (galeria.nombre!=null) msg+=galeria.nombre; msg+='</div>'; 
+        msg+='<div class="iw-content"><br>';
+            if (galeria.direccion!=null) msg+=galeria.direccion;
+             msg+='<br><a href=';  if (galeria.web!=null) msg+=galeria.web; msg+='>';
+            if (galeria.web!=null) msg+=galeria.web;
+            msg+='</div>';//content
+        msg+='</div>'; //container
+        return msg;   
+    }
+  
+  </script>
+  </head>
+
+  <body>
+    <p id="googleMap"></p>
+  </body>
+    
+    
+
+</html>
